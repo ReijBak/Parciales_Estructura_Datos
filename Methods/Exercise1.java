@@ -1,27 +1,31 @@
 package Methods;
 import Classes.Exercise1.*;
+import java.util.Scanner;
 
 public class Exercise1 {
-    public Products [][] FillProductsMatrix(Products [][] p) {
-        for (int i = 0; i < p.length; i++) {
-            for (int j = 0; j < p[i].length; j++) {
-                p[i][j] = new Products("Producto " + (i*10 + j + 1), Math.random() * 100 + 1, (int) (Math.random() * 10 + 1));
-
+    Scanner sc = new Scanner(System.in);
+    public void FillMessengersMatrix(Messenger[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.println("Ingrese el nombre del mensajero");
+                String name = sc.next();
+                System.out.println("Ingrese el numero de entregas realizadas por el mensajero");
+                int delivery_quantity = sc.nextInt();
+                m[i][j] = new Messenger(name, delivery_quantity);
             }
         }
-        return p;
     }
 
-    public Products FindProductByName(Products [][] p, String name) {
-        for (int i = 0; i < p.length; i++) {
-            for (int j = 0; j < p[i].length; j++) {
-                if (p[i][j].getName().equals(name)) {
-                    System.out.println("Producto encontrado en la posición: [" + i + "][" + j + "]");
-                    return p[i][j];
+    public Messenger FindMessengerByName(Messenger[][] m, String name) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if (m[i][j].getName().equals(name)) {
+                    System.out.println("Mensajero encontrado en la posición: [" + i + "][" + j + "]");
+                    return m[i][j];
                 }
             }
         }
-        System.out.println("Producto no encontrado");
+        System.out.println("Mesanjero no encontrado");
         return null;
     }
 }
