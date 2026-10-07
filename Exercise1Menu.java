@@ -1,9 +1,10 @@
 import Methods.*;
 import Classes.Exercise1.*;
 import java.util.Scanner;
-public class Exercises {
+
+public class Exercise1Menu {
     Scanner sc = new Scanner(System.in);
-    public void Exercise_1() {
+    public void Exercise1() {
         Exercise1 e = new Exercise1();
         System.out.println("Ingrese la dimensión de la matriz de mensajeros");
         int n = sc.nextInt();
